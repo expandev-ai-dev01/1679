@@ -18,11 +18,6 @@ export const config = {
       trustServerCertificate: process.env.NODE_ENV === 'development',
       enableArithAbort: true,
     },
-    pool: {
-      max: 10,
-      min: 0,
-      idleTimeoutMillis: 30000,
-    },
   },
   api: {
     port: parseInt(process.env.PORT || '3000'),

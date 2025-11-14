@@ -8,9 +8,8 @@ const router = Router();
  */
 
 /**
- * @api Public routes will be added here as features are implemented
- * Example:
- * router.use('/public', publicRoutes);
+ * @api Public routes will be added here
+ * Example: router.use('/public', publicRoutes);
  */
 
 export default router;

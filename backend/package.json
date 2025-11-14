@@ -16,7 +16,8 @@
     "autoclean",
     "file-management",
     "temporary-files",
-    "cleanup"
+    "backend",
+    "api"
   ],
   "author": "",
   "license": "ISC",

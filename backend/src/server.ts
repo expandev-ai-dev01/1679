@@ -39,9 +39,13 @@ app.get('/health', (req: Request, res: Response) => {
 app.use('/api', apiRoutes);
 
 /**
- * @summary Error handling middleware
+ * @summary 404 handler
  */
 app.use(notFoundMiddleware);
+
+/**
+ * @summary Error handling middleware
+ */
 app.use(errorMiddleware);
 
 /**
@@ -59,9 +63,7 @@ process.on('SIGTERM', () => {
  * @summary Server startup
  */
 const server = app.listen(config.api.port, () => {
-  console.log(
-    `AutoClean Backend Server running on port ${config.api.port} in ${process.env.NODE_ENV} mode`
-  );
+  console.log(`Server running on port ${config.api.port} in ${process.env.NODE_ENV} mode`);
   console.log(`API Version: ${config.api.version}`);
 });
 

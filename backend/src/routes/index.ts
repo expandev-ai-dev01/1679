@@ -5,7 +5,7 @@ const router = Router();
 
 /**
  * @summary API Version routing
- * @description Main router configuration with version management
+ * @description Main router configuration for API versioning
  */
 
 /**
@@ -15,7 +15,7 @@ router.use('/v1', v1Routes);
 
 /**
  * @api Future versions can be added here
- * router.use('/v2', v2Routes);
+ * Example: router.use('/v2', v2Routes);
  */
 
 export default router;

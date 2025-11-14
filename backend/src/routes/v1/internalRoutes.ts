@@ -8,9 +8,8 @@ const router = Router();
  */
 
 /**
- * @api Internal routes will be added here as features are implemented
- * Example:
- * router.use('/file-cleanup', fileCleanupRoutes);
+ * @api Internal routes will be added here
+ * Example: router.use('/resource', resourceRoutes);
  */
 
 export default router;

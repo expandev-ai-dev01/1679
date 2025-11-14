@@ -1,151 +1,133 @@
 # AutoClean Backend
 
-Backend API for AutoClean - File management system for identifying and removing temporary files.
+## Description
+Backend API for AutoClean - A file management system that identifies and removes temporary or duplicate files from selected folders.
 
-## Project Overview
-
-AutoClean is a simple script that identifies and removes temporary or duplicate files from a selected folder, helping to free up disk space.
+## Features
+- Identify and remove temporary files
+- RESTful API architecture
+- Multi-tenancy support
+- Secure authentication and authorization
+- Comprehensive error handling
 
 ## Technology Stack
-
 - **Runtime**: Node.js
 - **Language**: TypeScript
 - **Framework**: Express.js
-- **Database**: Microsoft SQL Server
+- **Database**: MS SQL Server
 - **Validation**: Zod
+
+## Prerequisites
+- Node.js 18.x or higher
+- MS SQL Server
+- npm or yarn
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd autoclean-backend
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Configure environment variables
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+4. Run database migrations
+```bash
+# Execute SQL scripts in database/ folder
+```
+
+## Development
+
+### Start development server
+```bash
+npm run dev
+```
+
+### Build for production
+```bash
+npm run build
+```
+
+### Start production server
+```bash
+npm start
+```
+
+### Run tests
+```bash
+npm test
+```
+
+### Lint code
+```bash
+npm run lint
+npm run lint:fix
+```
 
 ## Project Structure
 
 ```
 src/
-├── api/                    # API Controllers
-│   └── v1/                 # API Version 1
-│       ├── external/       # Public endpoints
-│       └── internal/       # Authenticated endpoints
-├── routes/                 # Route definitions
-│   └── v1/                 # Version 1 routes
-├── middleware/             # Express middleware
-├── services/               # Business logic services
-├── utils/                  # Utility functions
-├── constants/              # Application constants
-├── instances/              # Service instances
-├── config/                 # Configuration
-└── server.ts               # Application entry point
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-- Microsoft SQL Server
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Copy `.env.example` to `.env` and configure your environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Configure database connection in `.env`
-
-### Development
-
-Run the development server:
-```bash
-npm run dev
-```
-
-The server will start on `http://localhost:3000` (or the port specified in `.env`).
-
-### Building for Production
-
-Build the project:
-```bash
-npm run build
-```
-
-Start the production server:
-```bash
-npm start
+├── api/                 # API controllers
+│   └── v1/             # API version 1
+│       ├── external/   # Public endpoints
+│       └── internal/   # Authenticated endpoints
+├── routes/             # Route definitions
+├── middleware/         # Express middleware
+├── services/           # Business logic
+├── utils/              # Utility functions
+├── constants/          # Application constants
+├── instances/          # Service instances
+├── tests/              # Global test utilities
+├── config/             # Configuration
+└── server.ts           # Application entry point
 ```
 
 ## API Documentation
 
 ### Base URL
-
 - Development: `http://localhost:3000/api/v1`
 - Production: `https://api.yourdomain.com/api/v1`
 
 ### Health Check
-
 ```
 GET /health
 ```
 
-Returns the health status of the API.
-
-## Database
-
-The database layer follows a schema-based architecture:
-
-- **config**: System-wide configuration
-- **functional**: Business logic and entities
-- **security**: Authentication and authorization
-- **subscription**: Account management
-
-Database scripts should be placed in the `database/` directory following the established structure.
-
-## Code Standards
-
-- Follow TypeScript strict mode
-- Use ESLint for code quality
-- Write comprehensive tests
-- Document all public APIs with TSDoc comments
-- Follow the established naming conventions
-
-## Testing
-
-Run tests:
-```bash
-npm test
-```
-
-Run tests in watch mode:
-```bash
-npm run test:watch
-```
-
-## Linting
-
-Run ESLint:
-```bash
-npm run lint
-```
-
-Fix linting issues:
-```bash
-npm run lint:fix
-```
+### API Endpoints
+Endpoints will be documented as features are implemented.
 
 ## Environment Variables
 
-See `.env.example` for all available environment variables and their descriptions.
+| Variable | Description | Default |
+|----------|-------------|----------|
+| NODE_ENV | Environment mode | development |
+| PORT | Server port | 3000 |
+| DB_SERVER | Database server | localhost |
+| DB_PORT | Database port | 1433 |
+| DB_USER | Database user | sa |
+| DB_PASSWORD | Database password | - |
+| DB_NAME | Database name | autoclean |
 
 ## Contributing
 
 1. Create a feature branch
 2. Make your changes
-3. Write tests
+3. Write/update tests
 4. Submit a pull request
 
 ## License
-
 ISC
+
+## Support
+For issues and questions, please open an issue in the repository.
