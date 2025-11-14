@@ -7,22 +7,22 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Error caught by boundary:', error, errorInfo);
   }
 
-  render(): ReactNode {
+  render() {
     if (this.state.hasError) {
       return (
         this.props.fallback || (
-          <div className="flex flex-col items-center justify-center min-h-screen p-4">
-            <div className="max-w-md w-full space-y-4 text-center">
-              <h2 className="text-2xl font-bold text-gray-900">Something went wrong</h2>
-              <p className="text-gray-600">An unexpected error occurred. Please try again.</p>
+          <div className="flex items-center justify-center min-h-screen bg-gray-50">
+            <div className="text-center p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Something went wrong</h2>
+              <p className="text-gray-600 mb-6">We apologize for the inconvenience</p>
               <button
                 onClick={() => this.setState({ hasError: false })}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"

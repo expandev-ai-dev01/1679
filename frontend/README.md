@@ -1,6 +1,13 @@
 # AutoClean Frontend
 
-Simple script to identify and remove temporary or duplicate files from a folder.
+A React-based frontend application for the AutoClean file cleanup tool.
+
+## Features
+
+- Identify and remove temporary files
+- Detect duplicate files
+- Free up disk space
+- Modern, responsive UI with TailwindCSS
 
 ## Tech Stack
 
@@ -11,7 +18,6 @@ Simple script to identify and remove temporary or duplicate files from a folder.
 - React Router 7.9.3
 - TanStack Query 5.90.2
 - Axios 1.12.2
-- Zustand 5.0.8
 
 ## Getting Started
 
@@ -21,32 +27,42 @@ Simple script to identify and remove temporary or duplicate files from a folder.
 
 ### Installation
 
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-### Environment Setup
-
-Copy `.env.example` to `.env` and configure:
-
+2. Create environment file:
 ```bash
 cp .env.example .env
 ```
 
+3. Update `.env` with your API configuration:
+```
+VITE_API_URL=http://localhost:3000
+VITE_API_VERSION=v1
+VITE_API_TIMEOUT=30000
+```
+
 ### Development
 
+Start the development server:
 ```bash
 npm run dev
 ```
 
+The application will be available at `http://localhost:5173`
+
 ### Build
 
+Create a production build:
 ```bash
 npm run build
 ```
 
-### Preview Production Build
+### Preview
 
+Preview the production build:
 ```bash
 npm run preview
 ```
@@ -56,29 +72,36 @@ npm run preview
 ```
 src/
 ├── app/                 # Application configuration
-│   ├── App.tsx
-│   ├── router.tsx
-│   └── providers.tsx
-├── pages/              # Page components
-│   ├── Home/
-│   ├── NotFound/
-│   └── layouts/
-├── domain/             # Business domains
-├── core/               # Shared components and utilities
-│   ├── components/
-│   ├── lib/
-│   └── utils/
-└── assets/            # Static assets
-    └── styles/
+│   ├── App.tsx         # Root component
+│   └── router.tsx      # Routing configuration
+├── assets/             # Static assets
+│   └── styles/         # Global styles
+├── core/               # Core utilities and components
+│   ├── components/     # Shared components
+│   ├── lib/           # Library configurations
+│   ├── types/         # Global types
+│   └── utils/         # Utility functions
+├── domain/            # Business domains (to be added)
+├── pages/             # Page components
+│   ├── layouts/       # Layout components
+│   ├── Home/          # Home page
+│   └── NotFound/      # 404 page
+└── main.tsx           # Application entry point
 ```
 
-## Features
+## API Integration
 
-- Identify and remove temporary files
-- Detect common temporary file extensions (.tmp, .temp, .cache)
-- Clean up system temporary file patterns
-- Free up disk space
+The application uses Axios for API communication with two clients:
+
+- `publicClient`: For public endpoints (no authentication)
+- `authenticatedClient`: For protected endpoints (requires token)
+
+API configuration is in `src/core/lib/api.ts`
+
+## Contributing
+
+This is a foundational structure ready for feature implementation.
 
 ## License
 
-MIT
+Private project

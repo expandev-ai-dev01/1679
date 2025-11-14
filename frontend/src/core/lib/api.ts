@@ -40,22 +40,19 @@ authenticatedClient.interceptors.request.use(
 
     return config;
   },
-  (error: unknown) => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 authenticatedClient.interceptors.response.use(
   (response) => response,
-  (error: unknown) => {
-    if (typeof error === 'object' && error !== null && 'response' in error) {
-      const axiosError = error as { response: { status: number } };
-      if (axiosError.response?.status === 401) {
-        localStorage.removeItem('auth_token');
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('auth_token');
 
-        if (typeof window !== 'undefined') {
-          window.location.href = '/login';
-        }
+      if (typeof window !== 'undefined') {
+        window.location.href = '/login';
       }
     }
 

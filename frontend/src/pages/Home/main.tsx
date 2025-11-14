@@ -1,14 +1,29 @@
 export const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="max-w-2xl w-full space-y-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Welcome to AutoClean</h1>
-        <p className="text-lg text-gray-600">
-          Simple script to identify and remove temporary or duplicate files from a folder.
+    <div className="space-y-6">
+      <div className="bg-white rounded-lg shadow-sm p-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Welcome to AutoClean</h2>
+        <p className="text-gray-600 mb-4">
+          A simple script that identifies and removes temporary or duplicate files from a selected
+          folder.
         </p>
-        <div className="mt-8 p-6 bg-white rounded-lg shadow-md">
-          <p className="text-gray-700">Get started by implementing the file cleanup features.</p>
+        <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
+          <h3 className="text-sm font-medium text-blue-900 mb-2">Features:</h3>
+          <ul className="list-disc list-inside text-sm text-blue-800 space-y-1">
+            <li>Detect and remove temporary files (.tmp, .temp, .cache)</li>
+            <li>Identify duplicate files</li>
+            <li>Free up disk space automatically</li>
+            <li>Safe and controlled cleanup process</li>
+          </ul>
         </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Getting Started</h3>
+        <p className="text-gray-600">
+          Select a folder to scan for temporary and duplicate files. The application will analyze
+          the contents and provide options for cleanup.
+        </p>
       </div>
     </div>
   );
